@@ -7,8 +7,15 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "admin-lte": "^3.2.0",
+    "bootstrap": "^4.6.2",
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "icheck-bootstrap": "^3.0.1",
+    "jquery": "^3.6.1",
+    "overlayscrollbars": "^2.0.0-beta.1",
+    "vue": "^3.2.13",
+    "vue-router": "^4.1.5"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~5.0.0",
