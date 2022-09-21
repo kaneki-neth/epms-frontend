@@ -9,6 +9,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "admin-lte": "^3.2.0",
+    "axios": "^0.27.2",
     "bootstrap": "^4.6.2",
     "core-js": "^3.8.3",
     "icheck-bootstrap": "^3.0.1",
