@@ -6,11 +6,11 @@ import Home from '../views/Home'
 import App from './../App'
 
 const routes = [
-    {
-        path: '/',
-        name: 'App',
-        component: App
-    },
+    // {
+    //     path: '/',
+    //     name: 'App',
+    //     component: App
+    // },
     {
         path: '/home',
         name: 'Home',
@@ -19,6 +19,11 @@ const routes = [
     {
         path: '/login',
         name: 'Login',
+        component: Login
+    },
+    {
+        path: '/',
+        name: 'App',
         component: Login
     },
     {

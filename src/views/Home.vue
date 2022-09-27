@@ -1,25 +1,17 @@
 <template>
     <div class="home-box">
         <div>
-            <h3 v-if="user">Hello, you are in home page</h3>
+            <h3 v-if="user">Hello, you are in home page ( {{ user.name }} user )</h3>
+            <h3 v-if="!user">You are not logged in!</h3>
         </div>
     </div>  
 </template>
 
 <script>
-    
-import axios from 'axios'
 export default {
     name: 'Home',
-    data() {
-        return {
-            user: null
-        }
-    },
-    async created() {
-        const response = await axios.get('user')
-
-        this.user = response.data
-    }
+    props: [
+        'user'
+    ],
 }
 </script>

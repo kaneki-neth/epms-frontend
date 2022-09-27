@@ -1,3 +1,43 @@
+<!-- <script setup>
+import { ref, onMounted } from 'vue'
+import axios from 'axios'
+
+    
+</script> -->
+
+<script>
+import axios from 'axios'
+
+export default {
+    name: 'Login',
+    data() {
+        return {
+            email: '',
+            password: ''
+        }
+    },
+    methods: {
+        async login() {
+            try {
+                const response = await axios.post('login', {
+                    email: this.email,
+                    password: this.password
+                });
+    
+                localStorage.setItem('token', response.data.token)
+                // this.$router.push('/home')
+                window.location.href = '/home'
+            } catch (error) {
+                console.log(error)
+            }
+        }
+    }
+}
+
+</script>
+
+
+
 <template>        
 <div class="login-box">    
     <div class="login-logo">
@@ -7,7 +47,7 @@
     <div class="card">
         <div class="card-body login-card-body">
             <p class="login-box-msg">Sign in to start your session</p>
-                <form @submit.prevent="handleSubmit">
+                <form @submit.prevent="login">
                     <div class="input-group mb-3">
                         <input type="email" class="form-control" v-model="email" placeholder="Email">
                             <div class="input-group-append">
@@ -43,31 +83,6 @@
 </div>
 </template>
 
-<script>
-import axios from 'axios'
-
-export default {
-    name: 'Login',
-    data() {
-        return {
-            email: '',
-            password: ''
-        }
-    },
-    methods: {
-        async handleSubmit() {
-            const data = {
-                email: this.email,
-                password: this.password
-            }
-            const response = await axios.post('login', data);
-
-            localStorage.setItem('access_token', response.data.access_token)
-        }
-    }
-}
-
-</script>
 
 <style scoped>
 .login-box {

@@ -2,6 +2,7 @@
 <div class="register-box">
     <div class="register-logo">
         <a><b>Admin</b>LTE</a>
+        <!-- <img src="../assets/d_logo.jpg"> -->
     </div>
     <div class="card">
         <div class="card-body register-card-body">
