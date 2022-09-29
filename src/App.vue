@@ -1,35 +1,39 @@
 <script setup>
-import { ref, onMounted, computed } from 'vue'
-import axios from 'axios'
-import Navbar from './components/Navbar.vue'
+import { ref, onMounted, computed } from "vue";
+import axios from "axios";
+import Navbar from "./components/layouts/Navbar.vue";
+import Sidebar from "./components/layouts/Sidebar.vue";
 
 // state or data
-const user = ref(null)
+const user = ref(null);
 
 // lifecycle hook
 onMounted(() => {
-  getUser()
-})
+  getUser();
+});
 
 // methods
 const getUser = async () => {
   try {
-    const response = await axios.get('current-user')
-    user.value = response.data.user
+    const response = await axios.get("current-user");
+    user.value = response.data.user;
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
+};
 </script>
 
 <template>
   <Navbar :user="user" />
+  <Sidebar />
   <div class="box">
     <div class="box-content">
       <router-view :user="user" />
     </div>
   </div>
+  <!-- <router-view /> -->
 </template>
+
 <!-- <template>
   <Navbar :user="user" />
   <div class="box">
